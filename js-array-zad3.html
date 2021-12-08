@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<title>JS методи за масив</title>
+
+<body>
+
+    <h2>Масив от числа</h2>
+    <p id="text"></p>
+    <button onclick="addFirstEl()">Довави отпред</button>
+    <button onclick="addLastEl()">"Доваби отзад"</button>
+    <button onclick="delFristEl()">"Премахни отпред"</button>
+    <button onclick="delLastEl()">"Премахни отзад"</button>
+    Въведете преден номер на елемента: <input type="number" id="n" style="width: 40px">
+    <button onclick="delEl()">Премахни</button>
+
+    <script>
+        var numbers = new Array(1,2,3,4,5);
+        showArray();
+
+        function showArray(){
+            document.getElementById("text").innerHTML = numbers.join(" - ");
+        }
+
+        function addFirstEl(){
+            numbers.unshift(numbers[0] - 1);
+            showArray();
+        }
+
+        function addLastEl(){
+            numbers.push(numbers[numbers.length - 1] + 1);
+            showArray();
+        }
+
+        function delFristEl(){
+            numbers.shift();
+            showArray();
+        }
+
+        function delLastEl(){
+        numbers.pop();
+        showArray();
+        }
+
+        function delEl(){
+            numbers.pop();
+            showArray();
+        }
+
+        function delEl(){
+            let index = parseInt(document.getElementById("n").value);
+            numbers.splice((index-1), 1);
+            showArray();
+        }
+
+
+    </script>
+
+
+</body>
+</html>
